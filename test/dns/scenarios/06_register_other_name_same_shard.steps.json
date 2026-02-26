@@ -1,0 +1,104 @@
+{
+    "name": "register another name, different shard",
+    "steps": [
+        {
+            "step": "scCall",
+            "txId": "check-shard-1075",
+            "tx": {
+                "from": "address:viewer",
+                "to": "sc:dns#00",
+                "value": "0",
+                "function": "nameShard",
+                "arguments": [
+                    "0x636f6f6c6e616d65313037352e6e756d626174"
+                ],
+                "gasLimit": "50,000,000",
+                "gasPrice": "0"
+            },
+            "expect": {
+                "out": [ "0xf4" ],
+                "status": "",
+                "logs": [],
+                "gas": "*",
+                "refund": "*"
+            }
+        },
+        {
+            "step": "setState",
+            "accounts": {
+                "sc:dns#f4": {
+                    "nonce": "0",
+                    "balance": "0",
+                    "owner": "address:dns_owner",
+                    "storage": {
+                        "''registration_cost": "123,000",
+                        "''feat:register": "1"
+                    },
+                    "code": "file:../output/dns.wasm"
+                },
+                "address:new_user": {
+                    "nonce": "0",
+                    "balance": "123,000"
+                }
+            }
+        },
+        {
+            "step": "scCall",
+            "txId": "try-register-coolname1075-same-user",
+            "comment": "The shard for coolname1075 is 0xf4",
+            "tx": {
+                "from": "address:new_user",
+                "to": "sc:dns#f4",
+                "value": "123,000",
+                "function": "register",
+                "arguments": [
+                    "0x636f6f6c6e616d65313037352e6e756d626174"
+                ],
+                "gasLimit": "40,000,000",
+                "gasPrice": "0"
+            },
+            "expect": {
+                "out": [],
+                "status": "0",
+                "logs": "*",
+                "gas": "*",
+                "refund": "*"
+            }
+        },
+        {
+            "step": "scQuery",
+            "txId": "resolve-coolname1075",
+            "tx": {
+                "to": "sc:dns#f4",
+                "function": "resolve",
+                "arguments": [
+                    "0x636f6f6c6e616d65313037352e6e756d626174"
+                ]
+            },
+            "expect": {
+                "out": [ "address:new_user" ]
+            }
+        },
+        {
+            "step": "checkState",
+            "accounts": {
+                "address:new_user": {
+                    "nonce": "*",
+                    "balance": "0",
+                    "username": "0x636f6f6c6e616d65313037352e6e756d626174"
+                },
+                "sc:dns#f4": {
+                    "nonce": "*",
+                    "balance": "123,000",
+                    "storage": {
+                        "''registration_cost": "123,000",
+                        "''feat:register": "1",
+                        "''value_state|keccak256:0x636f6f6c6e616d65313037352e6e756d626174": "u8:2|address:new_user"
+                    },
+                    "code": "file:../output/dns.wasm"
+                },
+                "+": ""
+            }
+        }
+    ]
+}
