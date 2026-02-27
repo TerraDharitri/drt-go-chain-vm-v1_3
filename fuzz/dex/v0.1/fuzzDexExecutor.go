@@ -3,7 +3,7 @@ package dex
 import (
 	"errors"
 	"fmt"
-	"io/ioutil"
+	"os"
 
 	vmi "github.com/TerraDharitri/drt-go-chain-vm-common"
 	worldhook "github.com/TerraDharitri/drt-go-chain-vm-v1_3/mock/world"
@@ -85,7 +85,7 @@ type fuzzDexExecutor struct {
 	wemeSwapAddress         string
 	webuSwapAddress         string
 	numUsers                int
-	numTokens               int
+	//numTokens               int
 	numEvents               int
 	removeLiquidityProb     int
 	addLiquidityProb        int
@@ -102,7 +102,7 @@ type fuzzDexExecutor struct {
 	exitFarmMaxValue        int
 	claimRewardsMaxValue    int
 	blockNonceIncrease      int
-	tokensCheckFrequency    int
+	//tokensCheckFrequency    int
 	currentFarmTokenNonce   map[string]int
 	farmers                 map[int]FarmerInfo
 	generatedScenario       *mj.Scenario
@@ -163,7 +163,7 @@ func newFuzzDexExecutor(fileResolver fr.FileResolver) (*fuzzDexExecutor, error) 
 func (pfe *fuzzDexExecutor) saveGeneratedScenario() {
 	serialized := mjwrite.ScenarioToJSONString(pfe.generatedScenario)
 
-	err := ioutil.WriteFile("fuzz_gen.scen.json", []byte(serialized), 0644)
+	err := os.WriteFile("fuzz_gen.scen.json", []byte(serialized), 0644)
 	if err != nil {
 		fmt.Println(err)
 	}

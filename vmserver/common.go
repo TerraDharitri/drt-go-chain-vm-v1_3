@@ -51,6 +51,7 @@ func fromHex(encoded string) ([]byte, error) {
 	return hex.DecodeString(encoded)
 }
 
+//nolint:unused
 func fromHexNoError(encoded string) []byte {
 	decoded, err := hex.DecodeString(encoded)
 	if err != nil {

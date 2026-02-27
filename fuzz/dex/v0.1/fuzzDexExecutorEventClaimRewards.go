@@ -26,10 +26,8 @@ func (pfe *fuzzDexExecutor) claimRewards(r *rand.Rand, statistics *eventsStatist
 	}
 
 	claimAmount := int64(amountMax)
-	if int64(amountMax) > amount {
+	if claimAmount > amount {
 		claimAmount = amount
-	} else {
-		claimAmount = int64(amountMax)
 	}
 
 	farm := pfe.farmers[nonce].farm

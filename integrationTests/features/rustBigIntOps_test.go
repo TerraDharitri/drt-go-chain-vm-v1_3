@@ -30,6 +30,7 @@ func unsignedInterpreter(bytes []byte) *big.Int {
 	return big.NewInt(0).SetBytes(bytes)
 }
 
+//nolint:unused
 func signedInterpreter(bytes []byte) *big.Int {
 	return twos.FromBytes(bytes)
 }

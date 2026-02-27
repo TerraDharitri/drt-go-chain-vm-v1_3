@@ -25,10 +25,8 @@ func (pfe *fuzzDexExecutor) exitFarm(r *rand.Rand, statistics *eventsStatistics)
 	}
 
 	unstakeAmount := int64(amountMax)
-	if int64(amountMax) > amount {
+	if unstakeAmount > amount {
 		unstakeAmount = amount
-	} else {
-		unstakeAmount = int64(amountMax)
 	}
 	farm := pfe.farmers[nonce].farm
 	pfe.farmers[nonce] = FarmerInfo{

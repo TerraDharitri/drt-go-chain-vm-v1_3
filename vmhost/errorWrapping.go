@@ -34,6 +34,7 @@ type wrappableError struct {
 	errsWithLocation []errorWithLocation
 }
 
+//nolint:unused
 func (werr *wrappableError) getTopErrorWithLocation() errorWithLocation {
 	return werr.errsWithLocation[len(werr.errsWithLocation)-1]
 }

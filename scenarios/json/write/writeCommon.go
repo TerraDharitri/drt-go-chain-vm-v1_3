@@ -87,6 +87,7 @@ func logsToOJ(logEntries []*mj.LogEntry) oj.OJsonObject {
 	return &logOJList
 }
 
+//nolint:unused
 func intToString(i *big.Int) string {
 	if i == nil {
 		return ""

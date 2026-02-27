@@ -62,7 +62,8 @@ func TransferToThirdPartyAsyncChildMock(instanceMock *mock.InstanceMock, config 
 		require.Nil(t, err)
 		outputContext.Finish([]byte("vault"))
 
-		host.Storage().SetStorage(test.ChildKey, test.ChildData)
+		_, err = host.Storage().SetStorage(test.ChildKey, test.ChildData)
+		require.Nil(t, err)
 
 		return instance
 	})

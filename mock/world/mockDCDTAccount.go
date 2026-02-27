@@ -113,9 +113,9 @@ func (a *Account) SetTokenBalanceUint64(tokenKey []byte, balance uint64) error {
 		return err
 	}
 
-	if balance < 0 {
+	/*if balance < 0 {
 		return ErrNegativeValue
-	}
+	}*/
 
 	tokenData.Value = big.NewInt(0).SetUint64(balance)
 	return a.SetTokenData(tokenKey, tokenData)

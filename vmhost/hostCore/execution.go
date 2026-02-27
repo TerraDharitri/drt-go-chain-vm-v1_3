@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/hex"
 	"errors"
-	"fmt"
+	//"fmt"
 	"math/big"
 
 	"github.com/TerraDharitri/drt-go-chain-core/core"
@@ -21,7 +21,7 @@ func (host *vmHost) doRunSmartContractCreate(input *vmcommon.ContractCreateInput
 	defer func() {
 		errs := host.GetRuntimeErrors()
 		if errs != nil {
-			log.Trace(fmt.Sprintf("doRunSmartContractCreate full error list"), "error", errs)
+			log.Trace("doRunSmartContractCreate full error list", "error", errs)
 		}
 		host.Clean()
 	}()
@@ -97,7 +97,7 @@ func (host *vmHost) doRunSmartContractUpgrade(input *vmcommon.ContractCallInput)
 	defer func() {
 		errs := host.GetRuntimeErrors()
 		if errs != nil {
-			log.Trace(fmt.Sprintf("doRunSmartContractUpgrade full error list"), "error", errs)
+			log.Trace("doRunSmartContractUpgrade full error list", "error", errs)
 		}
 		host.Clean()
 	}()
@@ -148,7 +148,7 @@ func (host *vmHost) doRunSmartContractCall(input *vmcommon.ContractCallInput) (v
 	defer func() {
 		errs := host.GetRuntimeErrors()
 		if errs != nil {
-			log.Trace(fmt.Sprintf("doRunSmartContractCall full error list for %s", input.Function), "error", errs)
+			log.Trace("doRunSmartContractCall full error list for "+input.Function, "error", errs)
 		}
 		host.Clean()
 	}()
@@ -428,6 +428,7 @@ func (host *vmHost) isInitFunctionBeingCalled() bool {
 	return functionName == vmhost.InitFunctionName || functionName == vmhost.InitFunctionNameEth
 }
 
+//nolint:unused
 func (host *vmHost) isBuiltinFunctionBeingCalled() bool {
 	functionName := host.Runtime().Function()
 	return host.IsBuiltinFunctionName(functionName)

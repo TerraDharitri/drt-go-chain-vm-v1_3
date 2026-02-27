@@ -2,7 +2,7 @@ package featuresintegrationtest
 
 import (
 	"fmt"
-	"io/ioutil"
+	"os"
 	"math/big"
 	"strings"
 	"testing"
@@ -50,6 +50,7 @@ func newPureFunctionExecutor() (*pureFunctionExecutor, error) {
 		GasSchedule:          gasSchedule,
 		BuiltInFuncContainer: builtInFunctions.NewBuiltInFunctionContainer(),
 		ProtectedKeyPrefix:   []byte("N" + "U" + "M" + "B" + "A" + "T"),
+		UseWarmInstance:      true,
 		EnableEpochsHandler: &mock.EnableEpochsHandlerStub{
 			IsFlagEnabledCalled: func(flag core.EnableEpochFlag) bool {
 				return flag == hostCore.SCDeployFlag || flag == hostCore.AheadOfTimeGasUsageFlag || flag == hostCore.RepairCallbackFlag || flag == hostCore.BuiltInFunctionsFlag
@@ -69,7 +70,7 @@ func (pfe *pureFunctionExecutor) initAccounts(contractPath string) {
 	pfe.contractAddress = []byte("contract_addr_________________s1")
 	pfe.userAddress = []byte("user_addr_____________________s1")
 
-	scCode, err := ioutil.ReadFile(contractPath)
+	scCode, err := os.ReadFile(contractPath)
 	if err != nil {
 		panic(err)
 	}

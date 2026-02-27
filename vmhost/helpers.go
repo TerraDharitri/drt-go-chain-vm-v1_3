@@ -2,7 +2,7 @@ package vmhost
 
 import (
 	"fmt"
-	"io/ioutil"
+	"os"
 	"math/big"
 	"path/filepath"
 	"unsafe"
@@ -93,13 +93,13 @@ func InverseBytes(data []byte) []byte {
 
 // GetSCCode returns the SC code from a given file
 func GetSCCode(fileName string) []byte {
-	code, _ := ioutil.ReadFile(filepath.Clean(fileName))
+	code, _ := os.ReadFile(filepath.Clean(fileName))
 	return code
 }
 
 // SetLoggingForTests configures the logger package with *:TRACE and enabled logger names
 func SetLoggingForTests() {
-	logger.SetLogLevel("*:TRACE")
+	_ = logger.SetLogLevel("*:TRACE")
 	logger.ToggleLoggerName(true)
 }
 

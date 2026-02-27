@@ -25,14 +25,16 @@ func PerformAsyncCallParentMock(instanceMock *mock.InstanceMock, config interfac
 		t := instance.T
 		host.Metering().UseGas(testConfig.GasUsedByParent)
 
-		host.Storage().SetStorage(test.ParentKeyA, test.ParentDataA)
-		host.Storage().SetStorage(test.ParentKeyB, test.ParentDataB)
+		_, err := host.Storage().SetStorage(test.ParentKeyA, test.ParentDataA)
+		require.Nil(t, err)
+		_, err = host.Storage().SetStorage(test.ParentKeyB, test.ParentDataB)
+		require.Nil(t, err)
 		host.Output().Finish(test.ParentFinishA)
 		host.Output().Finish(test.ParentFinishB)
 
 		scAddress := host.Runtime().GetSCAddress()
 		transferValue := big.NewInt(testConfig.TransferToThirdParty)
-		err := host.Output().Transfer(test.ThirdPartyAddress, scAddress, 0, 0, transferValue, []byte("hello"), 0)
+		err = host.Output().Transfer(test.ThirdPartyAddress, scAddress, 0, 0, transferValue, []byte("hello"), 0)
 		require.Nil(t, err)
 
 		arguments := host.Runtime().Arguments()
@@ -45,7 +47,7 @@ func PerformAsyncCallParentMock(instanceMock *mock.InstanceMock, config interfac
 		// data for child -> third party tx
 		callData.Str(AsyncChildData)
 		// behavior param for child
-		callData.Bytes(append(arguments[0]))
+		callData.Bytes(arguments[0])
 
 		// amount to transfer from parent to child
 		value := big.NewInt(testConfig.TransferFromParentToChild).Bytes()
@@ -176,9 +178,10 @@ func finishResult(host vmhost.VMHost, result int) {
 	}
 }
 
+//nolint:unused
 func argumentsToHexString(functionName string, args ...[]byte) []byte {
 	separator := byte('@')
-	output := append([]byte(functionName))
+	output := []byte(functionName)
 	for _, arg := range args {
 		output = append(output, separator)
 		output = append(output, hex.EncodeToString(arg)...)

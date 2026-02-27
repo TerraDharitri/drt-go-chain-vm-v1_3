@@ -16,7 +16,6 @@ func TestExecution_PanicInGoWithSilentWasmer_SIGSEGV(t *testing.T) {
 
 	blockchain.GetStorageDataCalled = func(_ []byte, _ []byte) ([]byte, uint32, error) {
 		var i *int
-		i = nil
 
 		// dereference a nil pointer
 		*i = *i + 1

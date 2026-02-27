@@ -38,7 +38,7 @@ func (pfe *fuzzDexExecutor) addLiquidity(r *rand.Rand, statistics *eventsStatist
 		return err
 	}
 
-	output, err := pfe.executeTxStep(fmt.Sprintf(`
+	_, err = pfe.executeTxStep(fmt.Sprintf(`
 	{
 		"step": "scCall",
 		"txId": "accept-dcdt-payment",
@@ -73,7 +73,7 @@ func (pfe *fuzzDexExecutor) addLiquidity(r *rand.Rand, statistics *eventsStatist
 		return err
 	}
 
-	output, err = pfe.executeTxStep(fmt.Sprintf(`
+	_, err = pfe.executeTxStep(fmt.Sprintf(`
 	{
 		"step": "scCall",
 		"txId": "accept-dcdt-payment",
@@ -108,7 +108,7 @@ func (pfe *fuzzDexExecutor) addLiquidity(r *rand.Rand, statistics *eventsStatist
 		return err
 	}
 
-	output, err = pfe.executeTxStep(fmt.Sprintf(`
+	output, err := pfe.executeTxStep(fmt.Sprintf(`
 	{
 		"step": "scCall",
 		"txId": "add-liquidity",

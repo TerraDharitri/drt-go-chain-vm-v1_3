@@ -914,6 +914,9 @@ func extractIndirectContractCallArguments(
 	if err != nil {
 		return nil, err
 	}
+    if err != nil {
+		return nil, err
+	}
 
 	args, actualLen, err := getArgumentsFromMemory(
 		host,
@@ -921,6 +924,9 @@ func extractIndirectContractCallArguments(
 		argumentsLengthOffset,
 		dataOffset,
 	)
+	if err != nil {
+		return nil, err
+	}
 
 	gasToUse := math.MulUint64(metering.GasSchedule().BaseOperationCost.DataCopyPerByte, uint64(actualLen))
 	metering.UseGas(gasToUse)
