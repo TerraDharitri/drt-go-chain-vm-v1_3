@@ -1,9 +1,15 @@
-.PHONY: test test-short build vmserver clean
+.PHONY: test test-short build vmserver clean lint-install lint-run
 
 VM_VERSION := $(shell git describe --tags --long --dirty --always)
 
 clean:
 	go clean -cache -testcache
+
+lint-install:
+	go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+
+lint-run:
+	golangci-lint run
 
 build:
 	go build ./...

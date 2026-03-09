@@ -8,7 +8,7 @@ import (
 	"math/big"
 	"testing"
 
-	vmcommon "github.com/TerraDharitri/drt-go-chain-vm-common"
+	 "github.com/TerraDharitri/drt-go-chain-vm-common"
 	"github.com/TerraDharitri/drt-go-chain-vm-v1_3/config"
 	contextmock "github.com/TerraDharitri/drt-go-chain-vm-v1_3/mock/context"
 	mock "github.com/TerraDharitri/drt-go-chain-vm-v1_3/mock/context"

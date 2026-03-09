@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"unsafe"
 
-	vmcommon "github.com/TerraDharitri/drt-go-chain-vm-common"
+	 "github.com/TerraDharitri/drt-go-chain-vm-common"
 )
 
 // ImportedFunctionError represents any kind of errors related to a

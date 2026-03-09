@@ -7,7 +7,7 @@ import (
 	"github.com/TerraDharitri/drt-go-chain-core/core"
 	"github.com/TerraDharitri/drt-go-chain-core/data/dcdt"
 	"github.com/TerraDharitri/drt-go-chain-core/data/vm"
-	vmcommon "github.com/TerraDharitri/drt-go-chain-vm-common"
+	 "github.com/TerraDharitri/drt-go-chain-vm-common"
 )
 
 // DCDTTokenKeyPrefix is the prefix of storage keys belonging to DCDT tokens.

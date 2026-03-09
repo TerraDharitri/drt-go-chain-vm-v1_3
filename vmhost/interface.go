@@ -6,7 +6,7 @@ import (
 	"github.com/TerraDharitri/drt-go-chain-core/core"
 	"github.com/TerraDharitri/drt-go-chain-core/data/dcdt"
 	"github.com/TerraDharitri/drt-go-chain-core/data/vm"
-	vmcommon "github.com/TerraDharitri/drt-go-chain-vm-common"
+	 "github.com/TerraDharitri/drt-go-chain-vm-common"
 	"github.com/TerraDharitri/drt-go-chain-vm-v1_3/config"
 	"github.com/TerraDharitri/drt-go-chain-vm-v1_3/crypto"
 	"github.com/TerraDharitri/drt-go-chain-vm-v1_3/wasmer"

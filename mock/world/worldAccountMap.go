@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"math/big"
 
-	vmcommon "github.com/TerraDharitri/drt-go-chain-vm-common"
+	 "github.com/TerraDharitri/drt-go-chain-vm-common"
 )
 
 // AccountMap is a map from address to Account, also implementing the

@@ -1,7 +1,7 @@
 package vmserver
 
 import (
-	vmcommon "github.com/TerraDharitri/drt-go-chain-vm-common"
+	 "github.com/TerraDharitri/drt-go-chain-vm-common"
 	"github.com/TerraDharitri/drt-go-chain-vm-v1_3/vmhost"
 )
 

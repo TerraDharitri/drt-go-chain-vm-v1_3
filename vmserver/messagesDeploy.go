@@ -3,7 +3,7 @@ package vmserver
 import (
 	"os"
 
-	vmcommon "github.com/TerraDharitri/drt-go-chain-vm-common"
+	 "github.com/TerraDharitri/drt-go-chain-vm-common"
 )
 
 // DeployRequest is a CLI / REST request message

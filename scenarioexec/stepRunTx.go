@@ -8,7 +8,7 @@ import (
 	"math/big"
 
 	"github.com/TerraDharitri/drt-go-chain-core/data/vm"
-	vmcommon "github.com/TerraDharitri/drt-go-chain-vm-common"
+	 "github.com/TerraDharitri/drt-go-chain-vm-common"
 	mj "github.com/TerraDharitri/drt-go-chain-vm-v1_3/scenarios/json/model"
 )
 

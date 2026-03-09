@@ -8,7 +8,7 @@ import (
 	"testing"
 
 	"github.com/TerraDharitri/drt-go-chain-core/core"
-	vmcommon "github.com/TerraDharitri/drt-go-chain-vm-common"
+	 "github.com/TerraDharitri/drt-go-chain-vm-common"
 	"github.com/TerraDharitri/drt-go-chain-vm-common/builtInFunctions"
 	"github.com/TerraDharitri/drt-go-chain-vm-v1_3/config"
 	"github.com/TerraDharitri/drt-go-chain-vm-v1_3/crypto/factory"
