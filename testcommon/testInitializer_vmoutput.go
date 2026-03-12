@@ -7,7 +7,7 @@ import (
 	"unicode"
 
 	"github.com/TerraDharitri/drt-go-chain-core/data/vm"
-	vmcommon "github.com/TerraDharitri/drt-go-chain-vm-common"
+	 "github.com/TerraDharitri/drt-go-chain-vm-common"
 	"github.com/TerraDharitri/drt-go-chain-vm-v1_3/vmhost"
 	"github.com/stretchr/testify/require"
 )

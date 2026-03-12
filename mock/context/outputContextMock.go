@@ -4,7 +4,7 @@ import (
 	"math/big"
 
 	"github.com/TerraDharitri/drt-go-chain-core/data/vm"
-	vmcommon "github.com/TerraDharitri/drt-go-chain-vm-common"
+	 "github.com/TerraDharitri/drt-go-chain-vm-common"
 	worldmock "github.com/TerraDharitri/drt-go-chain-vm-v1_3/mock/world"
 	"github.com/TerraDharitri/drt-go-chain-vm-v1_3/vmhost"
 )

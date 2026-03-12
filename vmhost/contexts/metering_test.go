@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/TerraDharitri/drt-go-chain-core/data/vm"
-	vmcommon "github.com/TerraDharitri/drt-go-chain-vm-common"
+	 "github.com/TerraDharitri/drt-go-chain-vm-common"
 	"github.com/TerraDharitri/drt-go-chain-vm-v1_3/config"
 	"github.com/TerraDharitri/drt-go-chain-vm-v1_3/math"
 	contextmock "github.com/TerraDharitri/drt-go-chain-vm-v1_3/mock/context"

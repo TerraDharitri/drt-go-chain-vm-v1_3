@@ -1,7 +1,7 @@
 package worldmock
 
 import (
-	vmcommon "github.com/TerraDharitri/drt-go-chain-vm-common"
+	 "github.com/TerraDharitri/drt-go-chain-vm-common"
 	"github.com/TerraDharitri/drt-go-chain-vm-common/builtInFunctions"
 	"github.com/TerraDharitri/drt-go-chain-vm-common/mock"
 	"github.com/TerraDharitri/drt-go-chain-vm-v1_3/config"

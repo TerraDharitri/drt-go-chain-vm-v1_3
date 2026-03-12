@@ -4,7 +4,7 @@ import (
 	"errors"
 	"math/big"
 
-	vmcommon "github.com/TerraDharitri/drt-go-chain-vm-common"
+	 "github.com/TerraDharitri/drt-go-chain-vm-common"
 )
 
 // UpdateBalance sets a new balance to an account

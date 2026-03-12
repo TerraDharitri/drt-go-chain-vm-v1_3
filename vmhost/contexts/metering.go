@@ -5,7 +5,7 @@ import (
 
 	"github.com/TerraDharitri/drt-go-chain-core/data/vm"
 	logger "github.com/TerraDharitri/drt-go-chain-logger"
-	vmcommon "github.com/TerraDharitri/drt-go-chain-vm-common"
+	 "github.com/TerraDharitri/drt-go-chain-vm-common"
 	"github.com/TerraDharitri/drt-go-chain-vm-v1_3/config"
 	"github.com/TerraDharitri/drt-go-chain-vm-v1_3/math"
 	"github.com/TerraDharitri/drt-go-chain-vm-v1_3/vmhost"

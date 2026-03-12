@@ -10,7 +10,7 @@ import (
 	"github.com/TerraDharitri/drt-go-chain-core/core"
 	"github.com/TerraDharitri/drt-go-chain-core/core/check"
 	"github.com/TerraDharitri/drt-go-chain-core/data/vm"
-	vmcommon "github.com/TerraDharitri/drt-go-chain-vm-common"
+	 "github.com/TerraDharitri/drt-go-chain-vm-common"
 	"github.com/TerraDharitri/drt-go-chain-vm-common/parsers"
 	"github.com/TerraDharitri/drt-go-chain-vm-v1_3/math"
 	"github.com/TerraDharitri/drt-go-chain-vm-v1_3/vmhost"

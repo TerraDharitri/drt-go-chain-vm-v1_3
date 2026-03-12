@@ -6,7 +6,7 @@ import (
 	"math/big"
 
 	logger "github.com/TerraDharitri/drt-go-chain-logger"
-	vmcommon "github.com/TerraDharitri/drt-go-chain-vm-common"
+	 "github.com/TerraDharitri/drt-go-chain-vm-common"
 	"github.com/TerraDharitri/drt-go-chain-vm-v1_3/crypto/hashing"
 )
 

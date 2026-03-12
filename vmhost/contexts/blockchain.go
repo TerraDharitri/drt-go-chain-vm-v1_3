@@ -5,7 +5,7 @@ import (
 
 	"github.com/TerraDharitri/drt-go-chain-core/data/dcdt"
 	logger "github.com/TerraDharitri/drt-go-chain-logger"
-	vmcommon "github.com/TerraDharitri/drt-go-chain-vm-common"
+	 "github.com/TerraDharitri/drt-go-chain-vm-common"
 	"github.com/TerraDharitri/drt-go-chain-vm-v1_3/vmhost"
 )
 
