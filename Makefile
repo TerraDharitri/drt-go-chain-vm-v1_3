@@ -24,6 +24,9 @@ endif
 test: clean
 	go test -count=1 ./...
 
+test: clean
+	DYLB_LIBRARY_PATH=$(PWD)/wasmer go test -count=1 ./...	
+
 test-short:
 	go test -short -count=1 ./...
 
